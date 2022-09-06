@@ -1,0 +1,22 @@
+﻿@page "/about"
+
+<h3>About</h3>
+<p>
+    This was created because Captain Autismo(Years Old: @age, Days Old: @days ) got very bored one day and decided to make something that wasn't JS based
+
+</p>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Age();
+    }
+    private int age;
+    private int days;
+    private void Age(){
+        DateTime born = new DateTime(1999, 12, 23);
+        DateTime now = DateTime.Today;
+        days = (int)(now - born).TotalDays;
+        age = now.Year - born.Year;
+    }
+}

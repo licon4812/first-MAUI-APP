@@ -1,4 +1,4 @@
-﻿@page "/fetchdata"
+﻿@page "/weatherdata"
 
 @using FirstMAUIAPP.Data
 @inject WeatherForecastService ForecastService
@@ -19,16 +19,19 @@ else
 				<th>Date</th>
 				<th>Temp. (C)</th>
 				<th>Temp. (F)</th>
+				<th>Temp. (K)</th>
 				<th>Summary</th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach (var forecast in forecasts)
 			{
+				var temperatureK = @forecast.TemperatureC + 273.15;
 				<tr>
 					<td>@forecast.Date.ToShortDateString()</td>
 					<td>@forecast.TemperatureC</td>
 					<td>@forecast.TemperatureF</td>
+					<td>@temperatureK</td>
 					<td>@forecast.Summary</td>
 				</tr>
 			}
