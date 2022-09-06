@@ -1,0 +1,20 @@
+﻿@page "/golfdata"
+
+@using FirstMAUIAPP.Data
+
+<h3>GolfData</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Players</th>
+            @for(int i=0; i<= 9; i++){
+                <th>Hole @i</th>
+            }
+        </tr>
+    </thead>
+</table>
+
+@code {
+
+}
