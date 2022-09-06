@@ -5,7 +5,7 @@
 
 <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<p>This page contains weather data from Atlanta.</p>
 
 @if (forecasts == null)
 {
@@ -26,12 +26,11 @@ else
 		<tbody>
 			@foreach (var forecast in forecasts)
 			{
-				var temperatureK = @forecast.TemperatureC + 273.15;
 				<tr>
 					<td>@forecast.Date.ToShortDateString()</td>
 					<td>@forecast.TemperatureC</td>
 					<td>@forecast.TemperatureF</td>
-					<td>@temperatureK</td>
+					<td>@forecast.TemperatureK</td>
 					<td>@forecast.Summary</td>
 				</tr>
 			}
